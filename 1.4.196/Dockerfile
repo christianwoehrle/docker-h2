@@ -16,7 +16,9 @@ RUN curl ${DOWNLOAD} -o h2.zip \
 
 EXPOSE 81 1521
 
+
+
 CMD java -cp /opt/h2/bin/h2*.jar org.h2.tools.Server \
- 	-web -webAllowOthers -webPort 81 \
- 	-tcp -tcpAllowOthers -tcpPort 1521 \
+ 	-web -webAllowOthers -webPort $WEBPORT \
+ 	-tcp -tcpAllowOthers -tcpPort $LISTENER_PORT \
  	-baseDir ${DATA_DIR}
