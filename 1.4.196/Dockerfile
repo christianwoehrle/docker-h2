@@ -19,6 +19,6 @@ EXPOSE 81 1521
 
 
 CMD java -cp /opt/h2/bin/h2*.jar org.h2.tools.Server \
- 	-web -webAllowOthers -webPort $WEBPORT \
+ 	-web -webAllowOthers -webPort $WEB_PORT \
  	-tcp -tcpAllowOthers -tcpPort $LISTENER_PORT \
  	-baseDir ${DATA_DIR}
